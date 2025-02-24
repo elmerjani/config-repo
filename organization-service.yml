@@ -2,26 +2,17 @@ spring:
   jpa:
     hibernate:
       ddl-auto: none
-    database: POSTGRESQL
+    database: postgresql
     show-sql: true
-    hibernate:
-      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
     properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-  database:
-    driverClassName: org.postgresql.Driver
-  datasource:
-    platform: postgres
-    testWhileIdle: true
-    validationQuery: "SELECT 1"
+      hibernate.dialect : org.hibernate.dialect.PostgreSQLDialect
 
 management:
   endpoints:
     web:
       exposure:
-        include: "*"
-    enabled-by-default: true
+        include: *
+
 
 eureka:
   instance:
